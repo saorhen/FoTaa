@@ -1,0 +1,216 @@
+/* Общий стиль */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Шапка */
+.site-header {
+    width: 100%;
+    background-color: #4b0082;
+    color: #ffd700;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.site-header.sticky {
+    background-color: #3b006e; /* При прокрутке страницы шапка темнеет */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.site-title {
+    font-size: 28px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Основной экран */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+/* Экран для изображения */
+.image-display {
+    margin: 20px 0;
+    height: 600px;
+    background-color: #e0e0e0;
+    border: 3px solid #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-display img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.image-display:hover img {
+    transform: scale(1.05); /* При наведении увеличиваем изображение */
+}
+
+/* Кнопки */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
+}
+
+.btn-add {
+    background-color: #ffd700;
+    color: #4b0082;
+}
+
+.btn-clear {
+    background-color: #4b0082;
+    color: #ffd700;
+}
+
+.btn-show {
+    background-color: #ffeb3b;
+    color: #4b0082;
+}
+
+.btn-next, .btn-prev {
+    background-color: #133AAC;
+    color: #ffd700;
+}
+
+.btn-fullscreen {
+    background-color: #4b0082;
+    color: #ffd700;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px); /* Легкий эффект при наведении */
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: #d3abda27;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.modal-content.show {
+    transform: scale(1.05); /* Анимация появления */
+}
+
+/* Модальное изображение */
+.modal-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Кнопка для открытия изображения */
+.btn-open-modal {
+    background-color: #4b0082;
+    color: #ffd700;
+}
+
+/* Кнопка закрытия модального окна */
+.close {
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #4b0082;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    background-color: #ffd700;
+    color: #4b0082;
+    transform: scale(1.1); /* Эффект увеличения при наведении */
+}
+
+.close:active {
+    background-color: #ffd700;
+    color: #4b0082;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .site-title {
+        font-size: 22px;
+    }
+}
+
